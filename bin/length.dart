@@ -5,10 +5,6 @@ import 'package:args/args.dart';
 
 void main(List<String> arguments) {
   exitCode = 0;
-  // if (arguments.length != 1) {
-  //   print('Usage: lines <filename>');
-  //   exit(1);
-  // }
   final parser = ArgParser()..addFlag('verbose', abbr: 'v');
   final result = parser.parse(arguments);
   var file = File(result.rest.first);

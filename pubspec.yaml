@@ -1,6 +1,7 @@
 name: length
 description: A terrible esolang
-# version: 1.0.0
+version: 0.2.0
+repository: https://github.com/nailuj29gaming/length
 # homepage: https://www.example.com
 environment:
   sdk: '>=2.10.0 <3.0.0'
