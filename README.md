@@ -13,4 +13,5 @@ A programming language based on line length
 | 16          | `outa`  | Pops the top of the stack, and outputs its ascii value.                          |
 | 20          | `mul`   | Multiplies the top two values on the stack and pushes the result onto the stack. |
 | 21          | `div`   | Divides the top two values on the stack and pushes the result onto the stack.    |
+
 Esolangs link: https://esolangs.org/wiki/Length
