@@ -2,10 +2,8 @@ import 'dart:io';
 
 import 'package:stack/stack.dart';
 
-const DEBUG = false;
-
 /// The interpreter for the Lines esolang
-class Lines {
+class Length {
   /// Contains the program as a list of line lengths
   List<int> _program;
 
@@ -13,7 +11,7 @@ class Lines {
   Stack<int> _stack;
 
   /// Loads a program from a file
-  Lines(File program) {
+  Length(File program) {
     _program = [];
     _stack = Stack();
     for (var line in program.readAsLinesSync()) {
@@ -22,16 +20,16 @@ class Lines {
   }
 
   /// Runs the program
-  void run() {
+  void run(bool debug) {
     for (var i = 0; i < _program.length; i++) {
       var instruction = _program[i];
-      if (DEBUG) {
+      if (debug) {
         stdout.write('(${i + 1})');
       }
       switch (instruction) {
         // addition
         case 10:
-          if (DEBUG) {
+          if (debug) {
             print('add');
           }
           if (_stack.length < 2) {
@@ -44,7 +42,7 @@ class Lines {
           break;
         // subtraction
         case 11:
-          if (DEBUG) {
+          if (debug) {
             print('sub');
           }
           if (_stack.length < 2) {
@@ -57,7 +55,7 @@ class Lines {
           break;
         // multiplication
         case 20:
-          if (DEBUG) {
+          if (debug) {
             print('mul');
           }
           if (_stack.length < 2) {
@@ -70,7 +68,7 @@ class Lines {
           break;
         // division
         case 21:
-          if (DEBUG) {
+          if (debug) {
             print('div');
           }
           if (_stack.length < 2) {
@@ -82,7 +80,7 @@ class Lines {
           break;
         // Output as number
         case 15:
-          if (DEBUG) {
+          if (debug) {
             print('outn::::::::::');
           }
           if (_stack.length < 1) {
@@ -92,7 +90,7 @@ class Lines {
           break;
         // Output as ASCII
         case 16:
-          if (DEBUG) {
+          if (debug) {
             print('outa:::::::::');
           }
           if (_stack.length < 1) {
@@ -102,14 +100,14 @@ class Lines {
           break;
         // Push
         case 25:
-          if (DEBUG) {
+          if (debug) {
             print('push');
           }
           _stack.push(_program[++i]);
           break;
         // conditional
         case 13:
-          if (DEBUG) {
+          if (debug) {
             print('cond');
           }
           if (_stack.length < 1) {
@@ -124,24 +122,24 @@ class Lines {
           break;
         // Goto (Line under)
         case 14:
-          if (DEBUG) {
+          if (debug) {
             print('gotou');
           }
           i = _program[i + 1] - 1;
-          if (DEBUG) {
+          if (debug) {
             print('pc = ${i}');
           }
           break;
         // Goto (Top of stack)
         case 24:
-          if (DEBUG) {
+          if (debug) {
             print('gotos');
           }
           if (_stack.length < 1) {
             throw ArgumentError('Stack underflow at line ${i}');
           }
           i = _stack.pop();
-          if (DEBUG) {
+          if (debug) {
             print('pc = ${i}');
           }
           break;
@@ -152,14 +150,14 @@ class Lines {
           break;
         // dup
         case 12:
-          if (DEBUG) {
+          if (debug) {
             print('dup');
           }
           var top = _stack.pop();
           _stack.push(top);
           _stack.push(top);
       }
-      if (DEBUG) {
+      if (debug) {
         print('----------');
         _stack.print();
       }
