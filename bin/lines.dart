@@ -9,6 +9,8 @@ void main(List<String> arguments) {
   }
 
   var file = File(arguments[0]);
-  print(arguments[0]);
+  if (DEBUG) {
+    print(arguments[0]);
+  }
   Lines(file).run();
 }
