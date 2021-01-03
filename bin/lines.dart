@@ -12,5 +12,9 @@ void main(List<String> arguments) {
   if (DEBUG) {
     print(arguments[0]);
   }
-  Lines(file).run();
+  try {
+    Lines(file).run();
+  } catch (e) {
+    print((e as ArgumentError).message);
+  }
 }

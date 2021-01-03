@@ -35,7 +35,7 @@ class Lines {
             print('add');
           }
           if (_stack.length < 2) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
 
           var num1 = _stack.pop();
@@ -48,7 +48,7 @@ class Lines {
             print('sub');
           }
           if (_stack.length < 2) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
 
           var num1 = _stack.pop();
@@ -61,7 +61,7 @@ class Lines {
             print('mul');
           }
           if (_stack.length < 2) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
 
           var num1 = _stack.pop();
@@ -74,7 +74,7 @@ class Lines {
             print('div');
           }
           if (_stack.length < 2) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
           var num1 = _stack.pop();
           var num2 = _stack.pop();
@@ -86,7 +86,7 @@ class Lines {
             print('outn::::::::::');
           }
           if (_stack.length < 1) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
           stdout.write(_stack.pop());
           break;
@@ -96,7 +96,7 @@ class Lines {
             print('outa:::::::::');
           }
           if (_stack.length < 1) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
           stdout.write(String.fromCharCode(_stack.pop()));
           break;
@@ -113,7 +113,7 @@ class Lines {
             print('cond');
           }
           if (_stack.length < 1) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
           if (_stack.pop() == 0) {
             i++;
@@ -138,7 +138,7 @@ class Lines {
             print('gotos');
           }
           if (_stack.length < 1) {
-            throw ArgumentError('Stack too small: ${i}');
+            throw ArgumentError('Stack underflow at line ${i}');
           }
           i = _stack.pop();
           if (DEBUG) {
