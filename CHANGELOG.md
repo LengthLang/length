@@ -5,3 +5,7 @@
 ## 0.2.0
 
 - Add a CLI, rename to Length, and allow user to toggle debug mode
+
+## 0.2.1
+
+- Improve description, add examples

@@ -1,6 +1,6 @@
 name: length
-description: A terrible esolang
-version: 0.2.0
+description: A terrible esolang. Uses length of lines to determine how the code runs
+version: 0.2.1
 repository: https://github.com/nailuj29gaming/length
 # homepage: https://www.example.com
 environment:
