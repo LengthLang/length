@@ -1,4 +1,5 @@
 # Length
+![Discord](https://img.shields.io/discord/798936842808197140)
 A programming language based on line length
 ## Guide
 | Line Length | Name    | Description                                                                      |
