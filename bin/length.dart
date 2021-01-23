@@ -13,6 +13,7 @@ void main(List<String> arguments) {
   }
   try {
     Length(file).run(result['verbose'] as bool);
+    if (!Platform.isWindows) print("");
   } catch (e) {
     print((e as ArgumentError).message);
     exitCode = 2;
