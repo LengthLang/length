@@ -9,3 +9,7 @@
 ## 0.2.1
 
 - Improve description, add examples
+
+## 0.3.0
+
+- pop, rotation, and swapping instructions

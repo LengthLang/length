@@ -1,6 +1,6 @@
 name: length
 description: A terrible esolang. Uses length of lines to determine how the code runs
-version: 0.2.1
+version: 0.3.0
 repository: https://github.com/nailuj29gaming/length
 # homepage: https://www.example.com
 environment:
@@ -13,4 +13,3 @@ dev_dependencies:
   test: ^1.14.4
 dependencies:
   args: ^1.6.0
-  stack: ^0.1.3
